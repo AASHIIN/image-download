@@ -26,15 +26,15 @@ echo $Ndir
 echo "Printed"
 for i in $(cat done);do wget -nc -P $Ndir $i; done
 cd photos
-for j in $(ls *.js*);do sudo rm -rf $j;done 
-for k in $(ls *.html*);do sudo rm -rf $k;done
-for k in $(ls m=_b*);do sudo rm -rf $k;done
+sudo rm -rf *.js*
+sudo rm -rf *.html
+sudo rm -rf m=_b*
 cd ../
 sudo rm -rf req.py new done CurDir
-echo ""
+echo;echo;
 echo "Do you want to Zip files?"
 echo "Press '1' for yes and '2' for no -> "
-read -p "" Ans
+read -p  "" Ans
 if [ $Ans -eq $Repl ]; then
   zip -r photos_zip  photos
   sudo rm -rf photos
